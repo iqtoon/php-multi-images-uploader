@@ -10,8 +10,6 @@ if (isset($_FILES['images']['name'])){
 
 		$imgfile = $_FILES['images']['name'][$key];
 
-		echo($img);
-
 		$fileName = basename($_FILES['images']['name'][$key]); 
 
 		$targetFilePath = $targetDir . $fileName; 
@@ -27,7 +25,8 @@ if (isset($_FILES['images']['name'])){
 			$filename = $_FILES['images']['tmp_name'][$key];
 
 			if(move_uploaded_file($filename, $targetFilePath . $newname . '.' . $fileType)){ 
-
+				
+				// this will rename each image name
 				rename($targetFilePath . $newname . '.' . $fileType, $targetDir . $newname . '.' . $fileType); 
 			
 			} 
