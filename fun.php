@@ -8,8 +8,6 @@ if (isset($_FILES['images']['name'])){
 
 	foreach($_FILES['images']['name'] as $key=>$val){ 
 
-	//file_put_contents('uploads/file_name.jpg', $value);
-
 		$imgfile = $_FILES['images']['name'][$key];
 
 		echo($img);
@@ -35,7 +33,6 @@ if (isset($_FILES['images']['name'])){
 			} 
 		} 
 	}
-
-	echo json_encode('success');
 }
+
 ?>
